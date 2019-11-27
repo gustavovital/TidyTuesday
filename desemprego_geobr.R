@@ -5,12 +5,12 @@
 
 # pacotes necessarios ====
 
-require(ggplot2)
-require(dplyr)
-require(gganimate)
-require(sidrar)
-require(geobr)
-require(sf)
+library(ggplot2)
+library(dplyr)
+library(gganimate)
+library(sidrar)
+library(geobr)
+library(sf)
 
 # lendo as bases de dados ====
 
