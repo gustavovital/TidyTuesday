@@ -1,5 +1,5 @@
 # Script com o objetivo de analisar a variação do desemprego 
-# nos períodos Dilma-Bolsonaro, a partir de um ggnimate.
+# nos períodos 2012-2019, a partir de um ggnimate.
 # 
 # Autor: gustavovital@id.uff.br
 
@@ -28,9 +28,6 @@ colnames(desemprego) <- c('REG', 'TRI', 'VAL')
 
 desemprego$REG <- stringr::str_to_upper(desemprego$REG)
 brasil$name_state <- stringr::str_to_upper(brasil$name_state)
-
-desemprego <- desemprego %>% 
-  filter(REG != 'BRASIL')
 
 data <-left_join(brasil, desemprego, by = c("name_state" = "REG"))
 
