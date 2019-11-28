@@ -4,11 +4,11 @@
 
 # pacotes necessarios ====
 
-require(tidyverse)
-require(gganimate)
-require(sidrar)
-require(ggthemes)
-require(extrafont)
+library(tidyverse)
+library(gganimate)
+library(sidrar)
+library(ggthemes)
+library(extrafont)
 
 # lendo a base de dados ====
 
