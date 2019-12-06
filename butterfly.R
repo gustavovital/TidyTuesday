@@ -8,7 +8,6 @@
 
 library(tidyverse)
 library(gganimate)
-library(wesanderson)
 
 # definindo as funções: ====
 
@@ -30,8 +29,6 @@ df <-
   tibble(x = x,
          y = y,
          indice = 1:length(x))
-
-# names(wes_palettes)
 
 pal <- wes_palette("Rushmore", type = "continuous")
 
