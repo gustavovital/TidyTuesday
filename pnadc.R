@@ -91,14 +91,19 @@ tabela.idade$freq <- with(tabela.idade, ifelse(genero == "Homem", -freq, freq))
 
 # visualização ====
 
+tabela.salario <- readRDS('tabela.salario.rds')
+tabela.salario.medio <- readRDS('tabela.salario.medio.rds')
+tabela.salario.cor <- readRDS('tabela.salario.cor.rds')
+tabela.idade <- readRDS('tabela.idade.rds')
+
 # salario por genero e uf ====
 
 ggplot(tabela.salario, aes(x = UF, y = VD4020, fill = V2007)) +
   geom_bar(alpha = 1, stat="identity", position = "dodge") +
   coord_flip() +
   labs(x = NULL, y = NULL, title = 'Rendimentos Salariais Médios por Estados',
-       subtitle = 'em Milhares (R$)',
-       caption = 'Fonte: PNADC.\nElaboração: gustavovital@id.uff.br') +
+       subtitle = 'em reais (R$)',
+       caption = 'Fonte: PNADC. Terceiro Trimestre de 2019\nElaboração: @gustavoovital') +
   theme_minimal() +
   scale_fill_manual(values = wes_palette("GrandBudapest1", n = 2)) +
   theme(legend.position = 'bottom',
@@ -109,8 +114,8 @@ ggplot(tabela.salario, aes(x = UF, y = VD4020, fill = V2007)) +
 ggplot(tabela.salario.medio, aes(x = reorder(UF, VD4020), y = VD4020, label = round(VD4020, 2))) +
   geom_bar(alpha = .4, stat="identity", colour = 'dodgerblue4', fill = 'dodgerblue2') +
   geom_text_repel(size = 3, colour = 'dodgerblue4') +
-  labs(x = NULL, y = NULL, title = 'Rendimentos Salariais Médios por Estados', subtitle = 'em Milhares (R$)',
-       caption = 'Fonte: PNADC.\nElaboração: gustavovital@id.uff.br') +
+  labs(x = NULL, y = NULL, title = 'Rendimentos Salariais Médios por Estados', subtitle = 'em reais (R$)',
+       caption = 'Fonte: PNADC. Terceiro Trimestre de 2019\nElaboração: @gustavoovital') +
   coord_polar() +
   theme_minimal() +
   theme(axis.text = element_text(size=8))
@@ -123,7 +128,7 @@ ggplot(tabela.salario.cor, aes(x = UF, y = VD4020, fill = V2010)) +
   scale_fill_manual(values = wes_palette("Royal2", n = 5)) +
   coord_flip() +
   labs(x = NULL, y = NULL, title = 'Rendimentos Salariais Médios por Estados e Cor',
-       subtitle = 'em Milhares (R$)', caption = 'Fonte: PNADC.\nElaboração: gustavovital@id.uff.br') +
+       subtitle = 'em reais (R$)', caption = 'Fonte: PNADC. Terceiro Trimestre de 2019\nElaboração: @gustavoovital') +
   theme_minimal() +
   theme(legend.position = 'bottom',
         legend.title = element_blank())
@@ -138,10 +143,8 @@ ggplot(data = tabela.idade,  aes(x = faixa_de_idade, y = freq, fill = genero)) +
                      labels = paste(abs(seq(-5, 5, 1)), '%')) +
   geom_text(aes(label = paste(100*(abs(round(freq,4))), '%')), position=position_stack(vjust = 0.5), vjust=0.5, size = 2.5) +
   scale_fill_manual(values = wes_palette("Royal1", n = 2)) +
-    labs(x = NULL, y = NULL, title = 'Pirâmide Etária Brasileira', subtitle = 'Comparação entre Homens e Mulheres',
-         caption = 'Fonte: PNADC.\nElaboração: gustavovital@id.uff.br') +
+    labs(x = NULL, y = NULL, title = 'Pirâmide Etária Brasileira', subtitle = 'Participação Percentual Frente ao Total da População em Destaque',
+         caption = 'Fonte: PNADC. Terceiro Trimestre de 2019\nElaboração: @gustavoovital') +
   theme_minimal() +
   theme(legend.position = 'bottom',
         legend.title = element_blank())
-  
-
