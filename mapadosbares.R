@@ -8,8 +8,6 @@ library(ggExtra)
 library(ggrepel)
 library(patchwork)
 
-# register_google(key = "AIzaSyCFR98MASoEpX7xOXkHHrRbyfu6FDxaG4s")
-
 # Localizando os Campi da UFF ====
 
 uff_valonguinho <- qmap("R. Mario Santos Braga, 30 - Centro, Niterói - RJ, 24020-140", zoom=16, source = "google", maptype="roadmap")
