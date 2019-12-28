@@ -20,6 +20,7 @@ library(ggwordcloud)
 library(ggimage)
 library(patchwork)
 library(lubridate)
+library(ggwordcloud)
 
 stop_words <- as.character(read.table('stopwords.txt')$V1)
 
