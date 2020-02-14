@@ -2,7 +2,6 @@
 #
 # autor: gustavovital@id.uff.br
 
-
 library(tidyverse)
 library(ggalt)
 library(grid)
