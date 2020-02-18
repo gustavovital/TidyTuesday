@@ -15,7 +15,6 @@ data <- read.csv('idh_gini.csv', dec = ',')
 data$ANO <- rep(seq(as.Date('1990-01-01'), as.Date('2018-01-01'), 'years'), 9)
 
 data$IDH <- data$IDH/1000
-
 data_teste <- subset(data, ANO == '2018-01-01')
 
 # gif ====
