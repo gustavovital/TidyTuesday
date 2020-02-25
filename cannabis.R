@@ -18,8 +18,6 @@ cannabis_clean <- cannabis %>%
 
 rm(cannabis)
 
-# Creating a green theme ====
-
 theme_green <- theme(panel.background = element_rect(fill = 'lemonchiffon1'),
                      plot.background = element_rect(fill = 'lemonchiffon2'),
                      panel.grid.major = element_line(size = 0.5, linetype = 'solid', colour = "lemonchiffon2"),
