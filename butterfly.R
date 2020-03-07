@@ -24,7 +24,6 @@ butterfly_y <-
 x <- butterfly_x(seq(-12*pi,12*pi,.01))
 y <- butterfly_y(seq(-12*pi,12*pi,.01))
 
-
 df <-
   tibble(x = x,
          y = y,
