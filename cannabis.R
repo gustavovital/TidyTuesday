@@ -36,11 +36,11 @@ theme_green <- theme(panel.background = element_rect(fill = 'lemonchiffon1'),
                      legend.position = 'bottom',
                      legend.text = element_text(size=11, colour = 'seagreen4'))
 
-# brincadeira com os dados ====
+# brincadeira com os dados ----
 
 cannabis_clean %>% head()
 
-# Boxplot by flavor ====
+# Boxplot by flavor ----
 
 cannabis_clean %>% 
   ggplot(aes(x = reorder(Sabor, Rating), y = Rating)) +
@@ -51,7 +51,7 @@ cannabis_clean %>%
   theme_minimal() +
   theme_green
 
-# Histogram of best cannabis types ====
+# Histogram of best cannabis types ----
 
 cannabis_clean %>% 
   mutate(media = mean(Rating)) %>% 
@@ -67,7 +67,7 @@ cannabis_clean %>%
   coord_polar() +
   theme_green
 
-# plot normalized ====
+# plot normalized ----
 
 cannabis_point <- cannabis_clean %>% 
   group_by(Type, Rating) %>% 
@@ -108,7 +108,7 @@ looking for.'' (marijuanabreak)
                                       x=0.06,  y=0.5, hjust=0,
                                       gp=gpar(col="black", fontsize=12, fontface="italic"))))
 
-# cannabis that make us happy :) ====
+# cannabis that make us happy :) ----
 
 
 cannabis_clean %>% 
@@ -126,7 +126,3 @@ cannabis_clean %>%
   #geom_text( position=position_stack(vjust = 0.5), vjust=0.5, size = 2.5) +
   theme_green +
   theme(axis.text.x = element_text(angle = 45, vjust=0.5))
-  
- 
-
-
