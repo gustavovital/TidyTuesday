@@ -110,7 +110,6 @@ looking for.'' (marijuanabreak)
 
 # cannabis that make us happy :) ----
 
-
 cannabis_clean %>% 
   group_by(Type, Efeito, Sabor) %>% 
   summarise(media = mean(Rating)) %>% 
